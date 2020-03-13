@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+    <script src='static/Chart.min.js'></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>   Drowsiness Detection   </title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="./static/css/bootstrap.min.css" />
+
+    <!-- Owl Carousel -->
+    <link type="text/css" rel="stylesheet" href="./static/css/owl.carousel.css" />
+    <link type="text/css" rel="stylesheet" href="./static/css/owl.theme.default.css" />
+
+    <!-- Magnific Popup -->
+    <link type="text/css" rel="stylesheet" href="./static/css/magnific-popup.css" />
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="./static/css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="./static/css/style4.css" />
+    <style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <!-- Service -->
+    <body>
+  <center>
+      <br><br><br>
+    <h2 class="title">GRADES</h2>
+  </center>
+ <!-- CANVAS -->
+  <div>
+      <center>
+          {% block content %}
+                {% if count<=4 %}
+                    <div> <img src="/static/level-1.gif" alt="Girl in a jacket">
+                    <br>
+                    <h4>NUMBER OF ALARMS THIS WEEK:&nbsp;&nbsp;&nbsp;{{count}}<br><br>
+                    SLEEPY GRADE:&nbsp;&nbsp;&nbsp;LEVEL 1</h4></div>
+
+                {% elif count < 10%}
+                    <div> <img src="/static/level-2.gif" alt="Girl in a jacket">
+                    <br>
+                    <h4>NUMBER OF ALARMS THIS WEEK:&nbsp;&nbsp;&nbsp;{{count}}<br><br>
+                    SLEEPY GRADE:&nbsp;&nbsp;&nbsp;LEVEL 2</h4></div>
+                {% else %}
+                    <div> <img src="/static/level-2.gif" alt="Girl in a jacket">
+                    <br>
+                    <h4>NUMBER OF ALARMS THIS WEEK:&nbsp;&nbsp;&nbsp;{{count}}<br><br>
+                    SLEEPY GRADE:&nbsp;&nbsp;&nbsp;LEVEL 3</h4></div>
+
+          {% endif %}
+        {% endblock content %}
+      </center>
+  </div>
+  <!-- CANVAS -->
+
+
+
+
+
+
+       <div class="section-header text-center">
+
+
+          <!--          <br><br><h4 class="title">Results</h4>
+            <table id="customers">
+  <tr>
+    <th><center>ALARM PATTERNS</center></th>
+  </tr>
+            {% for y in f %}
+       <tr><td>{{y}}</td></tr>
+  {% endfor %}<tr><td></td></tr>
+</table>
+
+              -->  </div>
+        <!-- /Container -->
+
+    </div>
+    <!-- /Service -->
+    <!-- /Why Choose Us -->
+    <!-- Contact -->
+    <div id="contact" class="section md-padding">
+
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row">
+
+                <!-- Section-header -->
+                <!-- /contact form -->
+
+            </div>
+            <!-- /Row -->
+
+        </div>
+        <!-- /Container -->
+
+    </div>
+    <!-- /Contact -->
+    <!-- Footer -->
+    <footer id="footer" class="sm-padding bg-dark">
+
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row">
+
+                <div class="col-md-12">
+                    <!-- /footer logo -->
+                    <!-- footer follow -->
+                    <ul class="footer-follow">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-github"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                    <!-- /footer follow -->
+                    <!-- footer copyright -->
+
+                </div>
+
+            </div>
+            <!-- /Row -->
+
+        </div>
+        <!-- /Container -->
+
+    </footer>
+    <!-- /Footer -->
+    <!-- Back to top -->
+    <div id="back-to-top"></div>
+    <!-- /Back to top -->
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- /Preloader -->
+    <!-- jQuery Plugins -->
+    <script type="text/javascript" src="./static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./static/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="./static/js/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="./static/js/main.js"></script>
+
+</body>
+</html>
+
+<style>
+    .content {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+</style>
+
