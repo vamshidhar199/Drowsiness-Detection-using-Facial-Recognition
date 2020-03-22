@@ -7,4 +7,6 @@ Technology used:
 3) Python
 
 Run app.py
+
+
 Used files instead of data base for representing charts.
