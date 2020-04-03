@@ -71,7 +71,7 @@ chartcount = 0
 pv = 0
 while True:
     frame = vs.read()
-    frame = imutils.resize(frame, width=450)
+    frame = imutils.resize(frame, width=500)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     size = frame.shape
     rects = detector(gray, 0)
@@ -141,6 +141,7 @@ while True:
         # f.write("Times Fallen Sleepy\n")
         # a.write(str(pv))
         break
-
+a.close()
+f.close()
 cv2.destroyAllWindows()
 vs.stop()

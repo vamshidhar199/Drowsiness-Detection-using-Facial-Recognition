@@ -23,6 +23,11 @@ Al_on = False
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
+li = []
+f = open('texta.txt', 'w')
+a = open('alcounta.txt', 'w')
+
+
 def midpoint(p1 ,p2):
     return int((p1.x + p2.x)/2), int((p1.y + p2.y)/2)
 
@@ -73,6 +78,12 @@ while True:
         inner_lip_ratio = compute_mouth_ratio([60,62,64,66], landmarks)
         outter_lip_ratio = compute_mouth_ratio([48,51,54,57], landmarks)
         mouth_opening_ratio = (inner_lip_ratio + outter_lip_ratio) / 2;
+
+    #writing to file
+
+        f.write(str(blinking_ratio) + "\n")
+        li.append(blinking_ratio)
+
         cv2.putText(frame, str(mouth_opening_ratio), (448, 13), font, 0.5, (100, 100, 100))
         print(inner_lip_ratio,outter_lip_ratio,mouth_opening_ratio)
         if mouth_opening_ratio > 0.2 and blinking_ratio > 4 or blinking_ratio > 4.3:
@@ -85,8 +96,10 @@ while True:
             cv2.rectangle(frame, (x,y), (x1,y1), (0, 0, 255), 2)
             cv2.putText(frame, "Drowsing", (x, y-5), font, 0.5, (0, 0, 255))
             os.system('spd-say "Wake Up"')
+            a.write("on")
         else:
             cv2.rectangle(frame, (x,y), (x1,y1), (0, 255, 0), 2)
+            a.write("\n" + "off" + "\n")
 
     cv2.imshow("Frame", frame)
 

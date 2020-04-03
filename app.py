@@ -55,7 +55,7 @@ def index2():
     v[1]=opened
     labe=['closed','opened']
     #return render_template('piechart.html',f=lines,title='Sleepy chart', max=0.01,set=zip(values, labels,colors))
-    return render_template('charts.html', f=lines, title='Sleepy chart', set=zip(v,labe,colors),max=0.01, values=values, labels=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','...'],closed=closed,opened=opened,alcount=alcount)
+    return render_template('charts.html', f=lines, title='Drowsiness chart-Using Algorithm1', set=zip(v,labe,colors),max=0.01, values=values, thresh=0.3,labels=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','...'],closed=closed,opened=opened,alcount=alcount)
 
 
 
@@ -83,7 +83,7 @@ def indexa2():
         for line in file:
             line = line.strip()  # or some other preprocessing
             lines.append(line)
-            if float(line)<0.3:
+            if float(line)<4:
                 closed=closed+1
             else:
                 opened=opened+1
@@ -106,7 +106,7 @@ def indexa2():
     v[1]=opened
     labe=['closed','opened']
     #return render_template('piechart.html',f=lines,title='Sleepy chart', max=0.01,set=zip(values, labels,colors))
-    return render_template('charts.html', f=lines, title='Sleepy chart', set=zip(v,labe,colors),max=0.01, values=values, labels=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','...'],closed=closed,opened=opened,alcount=alcount)
+    return render_template('charts.html', f=lines, title='Drowsiness chart-Using Algorithm2', set=zip(v,labe,colors),max=0.01,thresh=4, values=values, labels=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','...'],closed=closed,opened=opened,alcount=alcount)
 
 
 @app.route('/index4', methods=['POST', 'GET'])
@@ -116,8 +116,9 @@ def index4():
     count=0
     with open("week.txt") as w:
         for i in w:
-            week.append(i)
-            count=count+1
+            if count<=20:
+                week.append(i)
+                count=count+1
     for j in range(0,count):
         wlables.append(j)
 
