@@ -1,0 +1,11 @@
+open-cv
+dlib
+imutils
+flask
+playsound
+argparse
+time
+Thread
+app
+face_utils
+VideoStream
